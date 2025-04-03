@@ -2,9 +2,35 @@
   "name": "rsbuild-plugin-tailwindcss-sort",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "lint": "biome check .",
+    "lint:write": "biome check . --write",
+    "format": "biome format --write",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "biome check --write"
+    ],
+    "*.{json,md}": [
+      "biome format --write"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -14,8 +40,7 @@
     "@babel/generator": "^7.27.0",
     "@babel/parser": "^7.27.0",
     "@babel/traverse": "^7.27.0",
-    "@babel/types": "^7.27.0",
-    "@rsbuild/core": "^1.3.2"
+    "@babel/types": "^7.27.0"
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
@@ -23,6 +48,11 @@
     ]
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@rsbuild/core": "^1.3.2",
+    "@rslib/core": "^0.6.1",
+    "@types/babel__generator": "^7.6.8",
+    "@types/babel__traverse": "^7.20.7",
     "@types/node": "^22.13.17",
     "typescript": "^5.8.2",
     "vitest": "^3.1.1"

@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./",
     "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
+    "lib": ["DOM", "ESNext"],
+    "module": "Node16",
     "strict": true,
     "declaration": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node16",
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
-  "include": ["src", "test"]
+  "include": ["src"]
 }
