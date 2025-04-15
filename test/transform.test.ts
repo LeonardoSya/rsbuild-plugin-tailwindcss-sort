@@ -1,5 +1,5 @@
 import { it, expect, describe } from 'vitest';
-import { transformTailwindcssClassOrder } from '../src/transform';
+import { transformTailwindcssClassOrder } from '../src/transform.js';
 
 describe('Tailwind className sorted', () => {
   it('should sort class names', () => {
