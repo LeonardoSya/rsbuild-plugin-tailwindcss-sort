@@ -1,5 +1,5 @@
 import type { RsbuildPlugin } from "@rsbuild/core";
-import { transformTailwindcssClassOrder } from "./transform.ts";
+import { transformTailwindcssClassOrder } from "./transform";
 
 export const RsbuildPluginTailwindcssSort = (): RsbuildPlugin => ({
   name: "rsbuild-plugin-tailwindcss-sort",
